@@ -1,0 +1,24 @@
+@startuml
+
+class Singleton {
+  -{static} Signleton* singleton
+  -Singleton()
+  +~Singleton()
+  +Singleton(const Singleton&) = delete
+  +Singleton& operator=(const Singleton&) = delete
+  +Singleton(Singleton&&) = delete
+  +Singleton& operator=(Singleton&&) = delete
+  +{static} Singleton* getInstance()
+}
+note right of Singleton::singleton
+  The only instance of Singleton class
+end note
+note right of Singleton::Singleton
+  Set constructor to private
+end note
+note right of Singleton::getInstance
+  For getting the only instance
+end note
+
+@enduml
+
